@@ -2,10 +2,68 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/meucss.css">
     <meta charset="UTF-8">
     <title>Refeitorio</title>
 </head>
 <body>
-<h1 class="text-danger">Olá mundo Django!</h1>
+
+<nav class="navbar bg-dark">
+
+    <div class="btn-group">
+
+
+        <button class="btn btn-warning dropdown-toggle " data-bs-toggle="dropdown">
+            Menu
+        </button>
+        <ul class=" ml-3 dropdown-menu bg-dark  text-center text-success col-lg-4">
+            <li><a class="btn dropdown-item text-success " href="#">Home</a></li>
+            <li>
+                <hr class="dropdown-divider " href="#">
+            </li>
+            </li>
+            <li><a class="dropdown-item text-success  " href="#">Home</a></li>
+        </ul>
+
+
+    </div>
+</nav>
+
+<main class="container">
+    <div class="row">
+
+        <article class="bg-success col-lg-6">
+            <div class=" m-auto mt-3 text-center">
+
+                <div class="  card col-lg-3 col-sm-12 col-md-6" id="mesa">
+                    <h6 class="card-header">Mesa</h6>
+                    <div class="card-body">1</div>
+
+                </div>
+            </div>
+
+        </article>
+        <div class="col-lg-6 bg-danger">
+
+
+            <figure>
+                <img src="/static/img/pdv.png" alt="" class="col-lg-6" >
+            </figure>
+
+
+        </div>
+    </div>
+
+</main>
+<footer class="bg-warning card-footer fixed-bottom">
+    rodapé
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
 </body>
 </html>
