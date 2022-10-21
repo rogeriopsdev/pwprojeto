@@ -1,6 +1,39 @@
 {% extends "refeitorio/base.html" %}
 
 {% block content %}
-{{ itens }}
+    <div>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Nome</td>
+            <td>Capacidade</td>
+            <td>Status</td>
+            <td>Foto</td>
+            <td>Editar</td>
+            <td>Excluir</td>
+        </tr>
+
+        </thead>
+        <tbody>
+        {% for item in itens %}
+        <tr>
+            <td>{{item.nome  }}</td>
+            <td>{{item.capacidade }}</td>
+            <td>{{item.status  }}</td>
+            <td><img src="{{ item.foto }}" alt="sem foto"></td>
+            <td><a href="#" class="btn btn-warning">Editar</a></td>
+            <td><a href="#" class="btn btn-danger">Excluir</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+    </div>
+
+
+
+
+
+
 
 {% endblock content %}
