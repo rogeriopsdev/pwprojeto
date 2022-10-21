@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from refeitorioapp.forms import MesaForms
+from refeitorioapp.models import Mesa
 
 
 # Create your views here.
@@ -16,3 +17,8 @@ def criar_mesa(request):
             obj.save()
             form = MesaForms()
     return render(request, 'refeitorio/criar_mesa.html', {'form': form})
+
+
+def mostrar(request):
+    itens = Mesa.objects.all()
+    return render(request,"refeitorio/mostrar.html",{'itens':itens})
