@@ -21,7 +21,7 @@
             <td>{{item.capacidade }}</td>
             <td>{{item.status  }}</td>
             <td><img src="{{ item.foto_url }}" alt="sem foto"></td>
-            <td><a href="#" class="btn btn-warning">Editar</a></td>
+            <td><a href="{% url 'editar' item.id %}" class="btn btn-warning">Editar</a></td>
             <td><a href="#" class="btn btn-danger">Excluir</a></td>
         </tr>
         {% endfor %}

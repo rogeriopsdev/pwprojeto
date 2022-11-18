@@ -18,13 +18,14 @@ from django.contrib import admin
 from django.urls import path, re_path
 from django.conf.urls.static import static
 from django.views.static import serve
-from refeitorioapp.views import index, criar_mesa,mostrar
+from refeitorioapp.views import index, criar_mesa,mostrar, editar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', index, name='index'),
     path('criar_mesa/', criar_mesa, name='criar_mesa'),
     path('mostrar/', mostrar, name='mostrar'),
+    path('editar/<int:id>', editar, name='editar'),
 
     re_path(r'^img/(?P<path>.*)$',serve,{'document_root':settings.MEDIA_ROOT}),
 ]

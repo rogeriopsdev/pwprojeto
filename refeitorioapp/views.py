@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404,redirect
 from refeitorioapp.forms import MesaForms
 from refeitorioapp.models import Mesa
+
 
 
 # Create your views here.
@@ -22,3 +23,20 @@ def criar_mesa(request):
 def mostrar(request):
     itens = Mesa.objects.all()
     return render(request,"refeitorio/mostrar.html",{'itens':itens})
+
+
+def editar(request,id):
+    mesa = get_object_or_404(Mesa, pk=id)
+    form = MesaForms(instance=mesa)
+    if request.method == "POST":
+        form = MesaForms(request.POST, request.FILES,instance=mesa)
+        if form.is_valid():
+            obj = form.save()
+            obj.save()
+            return redirect('mostrar')
+        else:
+            return render(request, 'refeitorio/editar.html', {'form': form,'mesa':mesa})
+    else:
+        return render(request, 'refeitorio/editar.html', {'form': form, 'mesa': mesa})
+
+

@@ -15,3 +15,11 @@ class Mesa(models.Model):
         else:
             return self.nome
 
+
+    def save(self):
+        super().save()
+        im = Image.open(self.foto.path)
+        novo_tamanho =(200,200)
+        im.thumbnail(novo_tamanho)
+        im.save(self.foto.path)
+
