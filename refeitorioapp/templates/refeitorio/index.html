@@ -33,21 +33,43 @@
     <div class="row">
 
         <article class="bg-success col-lg-6">
-            <div class=" m-auto mt-3 text-center">
+            <div class="row">
+                {% for mesa in mesas %}
 
-                <div class="  card col-lg-3 col-sm-12 col-md-6" id="mesa">
-                    <h6 class="card-header">Mesa</h6>
-                    <div class="card-body">1</div>
+                    {% if mesa.status == "Ocupado" %}
+                        <div class="  card col-lg-3 col-sm-12 col-md-6 m-3 bg-danger" id="mesa">
+                            <img class="img-thumbnail" src="{{ mesa.foto_url }}" alt="">
+                            <h6 class="card-header">{{ mesa.nome }}</h6>
+                            <div class="card-body">{{ mesa.status }}</div>
 
-                </div>
+                        </div>
+                        {% elif mesa.status == "Livre"%}
+                        <div class="  card col-lg-3 col-sm-12 col-md-6 m-3 bg-primary" id="mesa">
+                            <img class="img-thumbnail" src="{{ mesa.foto_url }}" alt="">
+                            <h6 class="card-header">{{ mesa.nome }}</h6>
+                            <div class="card-body">{{ mesa.status }}</div>
+
+                        </div>
+                        {% elif mesa.status == "Reservado" %}
+                        <div class="  card col-lg-3 col-sm-12 col-md-6 m-3 bg-warning" id="mesa">
+                            <img class="img-thumbnail" src="{{ mesa.foto_url }}" alt="">
+                            <h6 class="card-header">{{ mesa.nome }}</h6>
+                            <div class="card-body">{{ mesa.status }}</div>
+
+                        </div>
+
+
+                    {% endif %}
+
+
+                {% endfor %}
             </div>
-
         </article>
         <div class="col-lg-6 bg-danger">
 
 
             <figure>
-                <img src="/static/img/pdv.png" alt="" class="col-lg-6" >
+                <img src="/static/img/pdv.png" alt="" class="col-lg-6">
             </figure>
 
 

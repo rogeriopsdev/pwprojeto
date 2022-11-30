@@ -6,7 +6,8 @@ from refeitorioapp.models import Mesa
 
 # Create your views here.
 def index(request):
-    return render(request, 'refeitorio/index.html')
+    mesas =Mesa.objects.all()
+    return render(request, 'refeitorio/index.html',{'mesas':mesas})
 
 
 def criar_mesa(request):
